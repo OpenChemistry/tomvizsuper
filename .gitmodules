@@ -1,0 +1,6 @@
+[submodule "paraview"]
+	path = paraview
+	url = git://github.com/openchemistry/paraview
+[submodule "tomviz"]
+	path = tomviz
+	url = git://github.com/openchemistry/tomviz
