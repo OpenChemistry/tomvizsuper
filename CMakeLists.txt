@@ -21,5 +21,12 @@ set(TomvizSuper_DEFAULT_ARGS
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 list(APPEND TomvizSuper_DEFAULT_ARGS "-DQt5_DIR:PATH=${Qt5_DIR}")
 
+# Optionally build ITK, it is probably simpler to pip install it if needed.
+option(BUILD_ITK "Built ITK for ITK-based operators" OFF)
+if(BUILD_ITK)
+  include(external_itk)
+endif()
+
+# Now build ParaView followed by Tomviz.
 include(external_paraview)
 include(external_tomviz)
